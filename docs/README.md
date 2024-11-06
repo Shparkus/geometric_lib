@@ -123,3 +123,4 @@ Full project history
 - 622f52edb84b7577ca4d136a08815d81da06847c: Added rectangle
 - d078c8d9ee6155f3cb0e577d28d337b791de28e2: Docs added
 - 8ba9aeb3cea847b63a91ac378a2a6db758682460: Circle and square added
+- cdb34e707e94ab37a3b740d6b224f46fd8f5d162: Tests added
