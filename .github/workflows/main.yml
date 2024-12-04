@@ -14,16 +14,16 @@ jobs:
       uses: actions/checkout@v4
     - name: Run circle unittests
       run: |
-        python -m unittest test_circle.py -f
+        python -m unittest test_circle.py
     - name: Run rectangle unittests
       run: |
-        python -m unittest test_rectangle.py -f
+        python -m unittest test_rectangle.py
     - name: Run square unittests
       run: |
-        python -m unittest test_square.py -f
+        python -m unittest test_square.py
     - name: Run triangle unittests
       run: |
-        python -m unittest test_triangle.py -f
+        python -m unittest test_triangle.py
   
   test_windows:
     runs-on: windows-latest
@@ -32,13 +32,13 @@ jobs:
       uses: actions/checkout@v4
     - name: Run circle unittests
       run: |
-        python -m unittest test_circle.py -f
+        python -m unittest test_circle.py
     - name: Run rectangle unittests
       run: |
-        python -m unittest test_rectangle.py -f
+        python -m unittest test_rectangle.py
     - name: Run square unittests
       run: |
-        python -m unittest test_square.py -f
+        python -m unittest test_square.py
     - name: Run triangle unittests
       run: |
-        python -m unittest test_triangle.py -f
+        python -m unittest test_triangle.py
