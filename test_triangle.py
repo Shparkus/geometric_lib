@@ -10,13 +10,17 @@ class TriangleTestCase(unittest.TestCase):
         res = area(123458, 12)
         self.assertEqual(res, 740748)
 
+    def test_area_minus(self):
+        res = area(-123458, 12)
+        self.assertEqual(res, -740748)
+
     def test_area_random_big(self):
         res = area(123456789, 98765)
         self.assertEqual(res, 6096604882792.5)
 
     def test_area_string(self):
-        res = area("134", 10)
-        self.assertEqual(res, "Illegal argument")
+        with self.assertRaises(TypeError):
+            res = area("134", 10)
 
     def test_area_double(self):
         res = area(1.78965, 4)
@@ -27,20 +31,24 @@ class TriangleTestCase(unittest.TestCase):
         self.assertEqual(res, 156000)
 
     def test_perimeter_zero(self):
-        res = perimeter(100, 0, 5)
-        self.assertEqual(res, "Wrong argument")
+        with self.assertRaises(TypeError):
+            res = perimeter(100, 0, 5)
 
     def test_perimeter_random(self):
         res = perimeter(126789, 132467, 159256)
         self.assertEqual(res, 418512)
 
+    def test_perimeter_minus(self):
+        with self.assertRaises(TypeError):
+            res = perimeter(-126789, 132467, 159256)
+
     def test_perimeter_random_wrong(self):
-        res = perimeter(126789, 132467, 359256)
-        self.assertEqual(res, "Wrong argument")
+        with self.assertRaises(TypeError):
+            res = perimeter(126789, 132467, 359256)
 
     def test_perimeter_string(self):
-        res = perimeter("134", 100, 50)
-        self.assertEqual(res, "Illegal argument")
+        with self.assertRaises(TypeError):
+            res = perimeter("134", 100, 50)
 
     def test_perimeter_underscore_number(self):
         res = perimeter(126_789, 132467, 159256)

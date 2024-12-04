@@ -7,6 +7,10 @@ class RectangleTestCase(unittest.TestCase):
         res = area(10, 0)
         self.assertEqual(res, 0)
 
+    def test_area_minus(self):
+        with self.assertRaises(TypeError):
+            res = area(-5, 5)
+
     def test_area_square(self):
         res = area(10, 10)
         self.assertEqual(res, 100)
@@ -20,12 +24,12 @@ class RectangleTestCase(unittest.TestCase):
         self.assertEqual(res, 2373821278052)
 
     def test_area_string(self):
-        res = area("a", 15)
-        self.assertEqual(res, "Illegal argument")
+        with self.assertRaises(TypeError):
+            res = area("a", 15)
 
     def test_area_string_both(self):
-        res = area("b", "a")
-        self.assertEqual(res, "Illegal arguments")
+        with self.assertRaises(TypeError):
+            res = area("b", "a")
         
     def test_area_underscore_number(self):
         res = area(5_000, 10)
@@ -43,6 +47,10 @@ class RectangleTestCase(unittest.TestCase):
         res = perimeter(10, 0)
         self.assertEqual(res, 20)
 
+    def test_perimeter_minus(self):
+        with self.assertRaises(TypeError):
+            res = perimeter(-5, 5)
+
     def test_perimeter_square(self):
         res = perimeter(10, 10)
         self.assertEqual(res, 40)
@@ -56,12 +64,12 @@ class RectangleTestCase(unittest.TestCase):
         self.assertEqual(res, 6232104)
 
     def test_perimeter_string(self):
-        res = perimeter("a", 15)
-        self.assertEqual(res, "Illegal argument")
+        with self.assertRaises(TypeError):
+            res = perimeter("a", 15)
 
     def test_perimeter_string_both(self):
-        res = perimeter("b", "a")
-        self.assertEqual(res, "Illegal arguments")
+        with self.assertRaises(TypeError):
+            res = perimeter("b", "a")
         
     def test_perimeter_underscore_number(self):
         res = perimeter(5_000, 10)
