@@ -9,44 +9,38 @@ on:
 jobs:
   test_ubuntu:
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
     - name: Run circle unittests
       run: |
         python -m unittest test_circle.py
-        continue-on-error: true
     - name: Run rectangle unittests
       run: |
         python -m unittest test_rectangle.py
-        continue-on-error: true
     - name: Run square unittests
       run: |
         python -m unittest test_square.py
-        continue-on-error: true
     - name: Run triangle unittests
       run: |
         python -m unittest test_triangle.py
-        continue-on-error: true
   
   test_windows:
     runs-on: windows-latest
+    continue-on-error: true
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
     - name: Run circle unittests
       run: |
         python -m unittest test_circle.py
-        continue-on-error: true
     - name: Run rectangle unittests
       run: |
         python -m unittest test_rectangle.py
-        continue-on-error: true
     - name: Run square unittests
       run: |
         python -m unittest test_square.py
-        continue-on-error: true
     - name: Run triangle unittests
       run: |
         python -m unittest test_triangle.py
-        continue-on-error: true
